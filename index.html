@@ -1118,6 +1118,214 @@ content="Conheça a ciência, as vantagens e os dados por trás do drywall na co
       .footer-bottom {
         flex-direction: column;
       }
+
+      /* =========================
+   FONTES ACADÊMICAS
+========================= */
+
+.sources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.source-card {
+  padding: 28px;
+
+  background: white;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  transition: var(--transition);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.source-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: var(--blue);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: var(--transition);
+}
+
+.source-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow);
+
+  border-color: transparent;
+}
+
+.source-card:hover::before {
+  transform: scaleX(1);
+}
+
+.source-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+.source-university {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 12px;
+
+  background: var(--blue-light);
+  color: var(--blue);
+
+  border-radius: 9px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: .08em;
+}
+
+.source-icon {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 13px;
+
+  background: var(--green-light);
+  color: var(--green);
+}
+
+.source-card h3 {
+  font-size: 18px;
+  line-height: 1.35;
+
+  margin-bottom: 12px;
+}
+
+.source-card p {
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.source-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  margin-top: 20px;
+}
+
+.source-tags span {
+  padding: 6px 9px;
+
+  background: #f3f5f7;
+
+  border-radius: 7px;
+
+  color: #687482;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 22px;
+
+  color: var(--blue);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition: var(--transition);
+}
+
+.source-link:hover {
+  gap: 10px;
+}
+
+.sources-note {
+  display: flex;
+  gap: 15px;
+
+  align-items: flex-start;
+
+  margin-top: 20px;
+  padding: 22px;
+
+  background: var(--blue-light);
+
+  border: 1px solid #d9e5ff;
+  border-radius: 18px;
+}
+
+.sources-note-icon {
+  min-width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  background: white;
+  color: var(--blue);
+
+  border-radius: 11px;
+}
+
+.sources-note strong {
+  display: block;
+
+  font-size: 13px;
+
+  margin-bottom: 5px;
+}
+
+.sources-note p {
+  color: #617089;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* RESPONSIVO DAS FONTES */
+
+@media (max-width: 700px) {
+
+  .sources-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .source-card {
+    padding: 23px;
+  }
+
+  .sources-note {
+    padding: 18px;
+  }
+
+}
     }
   </style></head><body><header>
   <div class="container nav"><a href="#" class="logo">
@@ -1723,16 +1931,244 @@ content="Conheça a ciência, as vantagens e os dados por trás do drywall na co
 
 </div>
 
-  </div></section><section class="final-cta" id="fontes">  <div class="container"><div class="cta-box reveal">
+  </div></section> <section class="final-cta" id="fontes">
 
-  <h2>
-    Construção inteligente começa com informação.
-  </h2>
+  <div class="container">
 
-  <p>
-    Os números são importantes, mas entender como o sistema
-    funciona é o que permite fazer comparações realmente justas.
-  </p>
+    <div class="section-heading reveal">
+
+      <div class="section-label">
+        Fontes acadêmicas
+      </div>
+
+      <h2>
+        O que a universidade pesquisa sobre o drywall?
+      </h2>
+
+      <p>
+        O conteúdo do InovaDry também pode ser aprofundado por meio
+        de pesquisas, monografias e dissertações produzidas por
+        universidades e instituições de ensino brasileiras.
+      </p>
+
+    </div>
+
+
+    <div class="sources-grid">
+
+
+      <!-- UFRJ -->
+
+      <article class="source-card reveal">
+
+        <div class="source-card-top">
+
+          <div class="source-university">
+            UFRJ
+          </div>
+
+          <div class="source-icon">
+            <i data-lucide="graduation-cap"></i>
+          </div>
+
+        </div>
+
+        <h3>
+          Alvenarias em gesso acartonado, o drywall, e sistemas complementares
+        </h3>
+
+        <p>
+          Dissertação da Universidade Federal do Rio de Janeiro que
+          analisa o sistema de construção a seco, suas características,
+          desempenho, limitações e aspectos importantes para o projeto.
+        </p>
+
+        <div class="source-tags">
+          <span>Drywall</span>
+          <span>Desempenho</span>
+          <span>Construção a seco</span>
+        </div>
+
+        <a
+          href="https://proarq.fau.ufrj.br/producao/teses-e-dissertacoes/897/alvenarias-em-gesso-acartonado-o-drywall-e-sistemas-complementares-caracteristicas-e-problemas-solucionaveis-em-projeto"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="source-link"
+        >
+          Ver pesquisa
+          <i data-lucide="external-link"></i>
+        </a>
+
+      </article>
+
+
+      <!-- UFMG -->
+
+      <article class="source-card reveal">
+
+        <div class="source-card-top">
+
+          <div class="source-university">
+            UFMG
+          </div>
+
+          <div class="source-icon">
+            <i data-lucide="building-2"></i>
+          </div>
+
+        </div>
+
+        <h3>
+          Parede seca: sistema construtivo de fechamento em estrutura de drywall
+        </h3>
+
+        <p>
+          Monografia da Universidade Federal de Minas Gerais que
+          apresenta uma revisão sobre paredes de drywall, abordando
+          características, utilização, manutenção, desempenho e
+          comparação com sistemas convencionais.
+        </p>
+
+        <div class="source-tags">
+          <span>Parede seca</span>
+          <span>Desempenho</span>
+          <span>Durabilidade</span>
+        </div>
+
+        <a
+          href="https://repositorio.ufmg.br/items/f16ddb13-899d-4162-8525-d780c260920a"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="source-link"
+        >
+          Ver pesquisa
+          <i data-lucide="external-link"></i>
+        </a>
+
+      </article>
+
+
+      <!-- USP -->
+
+      <article class="source-card reveal">
+
+        <div class="source-card-top">
+
+          <div class="source-university">
+            USP
+          </div>
+
+          <div class="source-icon">
+            <i data-lucide="landmark"></i>
+          </div>
+
+        </div>
+
+        <h3>
+          Panorama atual do uso do sistema de drywall para edifícios residenciais
+        </h3>
+
+        <p>
+          Trabalho acadêmico da Universidade de São Paulo que analisa
+          a utilização do drywall em edifícios residenciais, considerando
+          aspectos de desempenho, custo-benefício, planejamento e
+          inserção de novas tecnologias construtivas.
+        </p>
+
+        <div class="source-tags">
+          <span>Edificações</span>
+          <span>Inovação</span>
+          <span>Planejamento</span>
+        </div>
+
+        <a
+          href="https://bdta.abcd.usp.br/item/002965269"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="source-link"
+        >
+          Ver pesquisa
+          <i data-lucide="external-link"></i>
+        </a>
+
+      </article>
+
+
+      <!-- IFPB -->
+
+      <article class="source-card reveal">
+
+        <div class="source-card-top">
+
+          <div class="source-university">
+            IFPB
+          </div>
+
+          <div class="source-icon">
+            <i data-lucide="leaf"></i>
+          </div>
+
+        </div>
+
+        <h3>
+          Construção sustentável: tecnologias voltadas à minimização de resíduos
+        </h3>
+
+        <p>
+          Pesquisa do Instituto Federal da Paraíba que analisa
+          tecnologias utilizadas para diminuir a geração de resíduos
+          na construção civil, incluindo sistemas construtivos a seco,
+          como drywall e Light Steel Frame.
+        </p>
+
+        <div class="source-tags">
+          <span>Sustentabilidade</span>
+          <span>Resíduos</span>
+          <span>Construção a seco</span>
+        </div>
+
+        <a
+          href="https://repositorio.ifpb.edu.br/handle/177683/4700"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="source-link"
+        >
+          Ver pesquisa
+          <i data-lucide="external-link"></i>
+        </a>
+
+      </article>
+
+
+    </div>
+
+
+    <div class="sources-note reveal">
+
+      <div class="sources-note-icon">
+        <i data-lucide="info"></i>
+      </div>
+
+      <div>
+
+        <strong>
+          Por que usamos fontes acadêmicas?
+        </strong>
+
+        <p>
+          As pesquisas universitárias ajudam a separar informações
+          técnicas de opiniões e mostram que o drywall pode ser
+          estudado cientificamente em aspectos como desempenho,
+          durabilidade, produtividade, sustentabilidade e planejamento.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
   <a href="#dados" class="btn btn-primary">
     Revisar os dados
