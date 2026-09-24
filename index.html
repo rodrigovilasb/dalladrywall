@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>InovaDry — Construção Inteligente</title><meta name="description"
+content="Conheça a ciência, as vantagens e os dados por trás do drywall na construção civil.">
 
-  <title>Drywall — Construção Inteligente</title>
-
-  <meta name="description"
-        content="Conheça a ciência, as vantagens e os dados por trás do drywall na construção civil.">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">  <script src="https://unpkg.com/lucide@latest"></script>  <style>
     :root {
       --bg: #f5f7f9;
       --white: #ffffff;
@@ -290,7 +279,9 @@
       border-color: #c9d1db;
     }
 
-    /* HERO VISUAL */
+    /* =========================
+       HERO VISUAL - INOVADRY
+    ========================= */
 
     .hero-card {
       min-height: 480px;
@@ -323,43 +314,123 @@
       filter: blur(10px);
     }
 
-    .wall {
-      position: absolute;
+    /* Estrutura visual da parede */
 
-      left: 15%;
-      right: 15%;
-      top: 17%;
-      bottom: 17%;
-
-      background:
-        linear-gradient(
-          90deg,
-          #dfe4e8 0%,
-          #ffffff 48%,
-          #d3d8dc 100%
-        );
-
-      border-radius: 14px;
-
-      box-shadow:
-        0 30px 60px rgba(0,0,0,.35);
-
-      transform: perspective(700px) rotateY(-12deg);
-    }
-
-    .wall-line {
+    .wall-system {
       position: absolute;
 
       width: 70%;
-      height: 4px;
+      height: 70%;
 
       left: 15%;
+      top: 15%;
+
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+
+      transform: perspective(900px) rotateY(-12deg);
+
+      filter: drop-shadow(0 30px 35px rgba(0,0,0,.35));
+    }
+
+    .wall-layer {
+      height: 100%;
+      border-radius: 5px;
+
+      position: relative;
+
+      transition: transform .4s ease;
+    }
+
+    .wall-layer:hover {
+      transform: translateZ(10px);
+    }
+
+    .wall-board-left {
+      width: 25%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #f4f5f6,
+          #cbd1d7
+        );
+
+      border-right: 3px solid #aeb6bf;
+    }
+
+    .wall-insulation {
+      width: 48%;
+
+      background:
+        repeating-linear-gradient(
+          0deg,
+          #596777 0px,
+          #596777 12px,
+          #657486 12px,
+          #657486 24px
+        );
+
+      border-left: 2px solid #3f4b59;
+      border-right: 2px solid #3f4b59;
+    }
+
+    .wall-insulation::before,
+    .wall-insulation::after {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+
+      width: 7px;
+
+      background: #aeb8c3;
+    }
+
+    .wall-insulation::before {
+      left: 25%;
+    }
+
+    .wall-insulation::after {
+      right: 25%;
+    }
+
+    .wall-board-right {
+      width: 25%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e9ecef,
+          #bcc4cb
+        );
+
+      border-left: 3px solid #aeb6bf;
+    }
+
+    /* Linhas azuis representando tecnologia/desempenho */
+
+    .technology-line {
+      position: absolute;
+
+      width: 82%;
+      height: 4px;
+
+      left: 9%;
       top: 50%;
 
       background: var(--blue);
 
+      border-radius: 20px;
+
       box-shadow:
-        0 0 20px rgba(37,99,235,.8);
+        0 0 15px rgba(37,99,235,.9),
+        0 0 35px rgba(37,99,235,.4);
+
+      z-index: 5;
     }
 
     .floating-data {
@@ -367,7 +438,7 @@
 
       padding: 13px 16px;
 
-      background: rgba(255,255,255,.94);
+      background: rgba(255,255,255,.96);
 
       border-radius: 15px;
 
@@ -375,6 +446,8 @@
 
       font-size: 12px;
       font-weight: 700;
+
+      z-index: 10;
     }
 
     .data-one {
@@ -385,6 +458,25 @@
     .data-two {
       right: 7%;
       bottom: 14%;
+    }
+
+    .system-label {
+      position: absolute;
+
+      left: 50%;
+      bottom: 8%;
+
+      transform: translateX(-50%);
+
+      color: #aeb7c3;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .08em;
+      text-transform: uppercase;
+
+      z-index: 5;
     }
 
     /* =========================
@@ -559,7 +651,7 @@
     }
 
     /* =========================
-       SCIENCE HIGHLIGHT
+       SCIENCE
     ========================= */
 
     .science {
@@ -984,6 +1076,13 @@
         min-height: 360px;
       }
 
+      .wall-system {
+        width: 72%;
+        height: 68%;
+        left: 14%;
+        top: 16%;
+      }
+
       section {
         padding: 75px 0;
       }
@@ -1020,833 +1119,716 @@
         flex-direction: column;
       }
     }
-  </style>
-</head>
+  </style></head><body><header>
+  <div class="container nav"><a href="#" class="logo">
+  <span class="logo-icon">
+    <i data-lucide="layers"></i>
+  </span>
 
-<body>
+  InovaDry<span style="color:#2563eb">.</span>
+</a>
 
-<!-- =========================
-     HEADER
-========================= -->
+<nav class="nav-links" id="navLinks">
+  <a href="#dados">Dados</a>
+  <a href="#vantagens">Vantagens</a>
+  <a href="#galeria">Aplicações</a>
+  <a href="#faq">FAQ</a>
+  <a href="#fontes" class="nav-cta">Fontes</a>
+</nav>
 
-<header>
-  <div class="container nav">
+<button class="menu-button" id="menuButton" aria-label="Abrir menu">
+  <i data-lucide="menu"></i>
+</button>
+
+  </div>
+</header><main><section class="hero">  <div class="container hero-grid"><div class="reveal">
+
+  <div class="eyebrow">
+    <span></span>
+    Inovação + Construção
+  </div>
+
+  <h1>
+    Construção inteligente começa com
+    <span>boas escolhas.</span>
+  </h1>
+
+  <p class="hero-text">
+    Descubra a ciência por trás do drywall e entenda como
+    esse sistema construtivo pode transformar velocidade,
+    conforto, sustentabilidade e eficiência nas obras.
+  </p>
+
+  <div class="hero-buttons">
+
+    <a href="#dados" class="btn btn-primary">
+      Explorar os fatos
+      <i data-lucide="arrow-down"></i>
+    </a>
+
+    <a href="#vantagens" class="btn btn-secondary">
+      Ver vantagens
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- NOVO VISUAL DO INOVADRY -->
+
+<div class="hero-card reveal">
+
+  <div class="floating-data data-one">
+    Menos peso estrutural
+  </div>
+
+  <div class="floating-data data-two">
+    Instalação mais rápida
+  </div>
+
+  <div class="wall-system">
+
+    <div class="wall-layer wall-board-left"></div>
+
+    <div class="wall-layer wall-insulation"></div>
+
+    <div class="wall-layer wall-board-right"></div>
+
+    <div class="technology-line"></div>
+
+  </div>
+
+  <div class="system-label">
+    Sistema construtivo InovaDry
+  </div>
+
+</div>
+
+  </div></section><section class="stats-section" id="dados">  <div class="container"><div class="section-heading reveal">
+
+  <div class="section-label">
+    Dados e evidências
+  </div>
+
+  <h2>
+    O que os números mostram?
+  </h2>
+
+  <p>
+    O desempenho do drywall pode ser analisado por diferentes
+    critérios: peso, acústica, resíduos, conforto e resistência.
+  </p>
+
+</div>
+
+
+<div class="stats-grid">
+
+  <article class="stat-card reveal">
+
+    <div class="stat-icon">
+      <i data-lucide="volume-2"></i>
+    </div>
+
+    <div class="stat-number">
+      50 dB+
+    </div>
+
+    <div class="stat-title">
+      Isolamento acústico
+    </div>
+
+    <p class="stat-description">
+      Sistemas com múltiplas placas e lã mineral podem alcançar
+      elevados níveis de isolamento acústico.
+    </p>
+
+    <span class="source">
+      Fonte: especificação depende do sistema
+    </span>
+
+  </article>
+
+
+  <article class="stat-card reveal">
+
+    <div class="stat-icon">
+      <i data-lucide="thermometer"></i>
+    </div>
+
+    <div class="stat-number">
+      Até 30%
+    </div>
+
+    <div class="stat-title">
+      Eficiência energética
+    </div>
+
+    <p class="stat-description">
+      O desempenho térmico melhora com sistemas compostos
+      por placas, cavidade e materiais isolantes.
+    </p>
+
+    <span class="source">
+      Fonte: depende do projeto
+    </span>
+
+  </article>
+
+
+  <article class="stat-card reveal">
+
+    <div class="stat-icon">
+      <i data-lucide="weight"></i>
+    </div>
+
+    <div class="stat-number">
+      Até 80%
+    </div>
+
+    <div class="stat-title">
+      Menor peso
+    </div>
+
+    <p class="stat-description">
+      Sistemas de paredes leves podem reduzir significativamente
+      a carga transmitida à estrutura.
+    </p>
+
+    <span class="source">
+      Fonte: estudos comparativos
+    </span>
+
+  </article>
+
+
+  <article class="stat-card reveal">
+
+    <div class="stat-icon">
+      <i data-lucide="recycle"></i>
+    </div>
+
+    <div class="stat-number">
+      -85%
+    </div>
+
+    <div class="stat-title">
+      Menos resíduos
+    </div>
+
+    <p class="stat-description">
+      A construção a seco pode reduzir desperdícios quando
+      comparada a determinados sistemas convencionais.
+    </p>
+
+    <span class="source">
+      Fonte: varia conforme a obra
+    </span>
+
+  </article>
+
+
+  <article class="stat-card reveal">
+
+    <div class="stat-icon">
+      <i data-lucide="flame"></i>
+    </div>
+
+    <div class="stat-number">
+      Até 120 min
+    </div>
+
+    <div class="stat-title">
+      Resistência ao fogo
+    </div>
+
+    <p class="stat-description">
+      Sistemas específicos com placas RF podem atingir elevados
+      tempos de resistência ao fogo.
+    </p>
+
+    <span class="source">
+      Fonte: sistema ensaiado
+    </span>
+
+  </article>
+
+</div>
+
+  </div></section><section id="vantagens">  <div class="container"><div class="section-heading reveal">
+
+  <div class="section-label">
+    Na prática
+  </div>
+
+  <h2>
+    Mais do que uma parede.
+  </h2>
+
+  <p>
+    O drywall também influencia a maneira como uma obra é
+    planejada, instalada, modificada e mantida.
+  </p>
+
+</div>
+
+
+<div class="benefits-grid">
+
+  <article class="benefit-card reveal">
+
+    <div class="benefit-icon">
+      <i data-lucide="timer"></i>
+    </div>
+
+    <h3>Rapidez</h3>
+
+    <p>
+      A construção a seco permite executar paredes e divisórias
+      com menos etapas e sem o tempo de secagem da alvenaria
+      tradicional.
+    </p>
+
+  </article>
+
+
+  <article class="benefit-card reveal">
+
+    <div class="benefit-icon">
+      <i data-lucide="lamp-ceiling"></i>
+    </div>
+
+    <h3>Liberdade de design</h3>
+
+    <p>
+      Curvas, nichos, sancas, iluminação embutida e diferentes
+      configurações podem ser incorporadas ao projeto.
+    </p>
+
+  </article>
+
+
+  <article class="benefit-card reveal">
+
+    <div class="benefit-icon">
+      <i data-lucide="wrench"></i>
+    </div>
+
+    <h3>Manutenção simples</h3>
+
+    <p>
+      Instalações elétricas, hidráulicas e de dados podem ser
+      organizadas dentro das paredes, facilitando intervenções.
+    </p>
+
+  </article>
+
+
+  <article class="benefit-card reveal">
+
+    <div class="benefit-icon">
+      <i data-lucide="maximize"></i>
+    </div>
+
+    <h3>Mais área útil</h3>
+
+    <p>
+      Dependendo do sistema utilizado, paredes mais finas podem
+      liberar alguns centímetros de área interna.
+    </p>
+
+  </article>
+
+</div>
+
+  </div></section><section class="science">  <div class="container science-grid"><div class="reveal">
+
+  <div class="section-label">
+    Ciência da construção
+  </div>
+
+  <h2>
+    O desempenho está dentro da parede.
+  </h2>
+
+  <p class="science-description">
+    Uma parede de drywall não é apenas uma placa de gesso.
+    O desempenho depende da combinação entre placas, perfis,
+    cavidade interna, lã mineral, fixações e demais componentes.
+  </p>
+
+  <div class="science-list">
+
+    <div class="science-item">
+
+      <div class="check">
+        <i data-lucide="check" size="15"></i>
+      </div>
+
+      <p>
+        A lã mineral contribui para o isolamento acústico
+        e térmico.
+      </p>
+
+    </div>
+
+
+    <div class="science-item">
+
+      <div class="check">
+        <i data-lucide="check" size="15"></i>
+      </div>
+
+      <p>
+        A cavidade interna permite acomodar instalações
+        elétricas, hidráulicas e de dados.
+      </p>
+
+    </div>
+
+
+    <div class="science-item">
+
+      <div class="check">
+        <i data-lucide="check" size="15"></i>
+      </div>
+
+      <p>
+        O baixo peso reduz a carga permanente sobre a estrutura,
+        dependendo da solução adotada.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="comparison reveal">
+
+  <div class="comparison-title">
+    Exemplo de comparação de peso
+  </div>
+
+  <div class="bar-row">
+
+    <div class="bar-label">
+      <span>Alvenaria</span>
+      <strong>100%</strong>
+    </div>
+
+    <div class="bar">
+      <div class="bar-fill masonry"></div>
+    </div>
+
+  </div>
+
+
+  <div class="bar-row">
+
+    <div class="bar-label">
+      <span>Drywall</span>
+      <strong>≈ 26%</strong>
+    </div>
+
+    <div class="bar">
+      <div class="bar-fill drywall"></div>
+    </div>
+
+  </div>
+
+  <p style="
+    color:#8994a1;
+    font-size:11px;
+    margin-top:25px;
+  ">
+    Representação visual de um cenário comparativo.
+    Os valores reais variam conforme os sistemas utilizados.
+  </p>
+
+</div>
+
+  </div></section><section id="galeria">  <div class="container"><div class="section-heading reveal">
+
+  <div class="section-label">
+    Aplicações
+  </div>
+
+  <h2>
+    Onde o drywall aparece?
+  </h2>
+
+  <p>
+    De residências a escritórios, o sistema pode assumir
+    diferentes funções arquitetônicas.
+  </p>
+
+</div>
+
+
+<div class="gallery-grid">
+
+  <div class="gallery-item reveal">
+
+    <img
+      src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
+      alt="Sala moderna">
+
+    <div class="gallery-overlay">
+      <h3>Ambientes residenciais</h3>
+    </div>
+
+  </div>
+
+
+  <div class="gallery-item reveal">
+
+    <img
+      src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+      alt="Escritório moderno">
+
+    <div class="gallery-overlay">
+      <h3>Escritórios</h3>
+    </div>
+
+  </div>
+
+
+  <div class="gallery-item reveal">
+
+    <img
+      src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80"
+      alt="Interior moderno">
+
+    <div class="gallery-overlay">
+      <h3>Design de interiores</h3>
+    </div>
+
+  </div>
+
+
+  <div class="gallery-item reveal">
+
+    <img
+      src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80"
+      alt="Quarto moderno">
+
+    <div class="gallery-overlay">
+      <h3>Conforto acústico</h3>
+    </div>
+
+  </div>
+
+
+  <div class="gallery-item reveal">
+
+    <img
+      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+      alt="Casa moderna">
+
+    <div class="gallery-overlay">
+      <h3>Construção contemporânea</h3>
+    </div>
+
+  </div>
+
+</div>
+
+  </div></section><section id="faq">  <div class="container"><div class="section-heading reveal">
+
+  <div class="section-label">
+    Perguntas frequentes
+  </div>
+
+  <h2>
+    Ainda ficou alguma dúvida?
+  </h2>
+
+  <p>
+    Algumas das principais dúvidas sobre o sistema respondidas
+    de maneira simples.
+  </p>
+
+</div>
+
+
+<div class="faq-container">
+
+  <div class="faq-item reveal">
+
+    <button class="faq-question">
+      Drywall aguenta televisão e armários?
+      <i data-lucide="chevron-down"></i>
+    </button>
+
+    <div class="faq-answer">
+      <p>
+        Sim. O sistema pode receber TVs, armários e outros objetos,
+        desde que sejam utilizados pontos de fixação adequados,
+        considerando o peso e a posição dos perfis ou reforços
+        internos.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="faq-item reveal">
+
+    <button class="faq-question">
+      Pode usar drywall em banheiro?
+      <i data-lucide="chevron-down"></i>
+    </button>
+
+    <div class="faq-answer">
+      <p>
+        Sim, mas não deve ser utilizada uma placa comum em qualquer
+        situação. Existem placas específicas para áreas úmidas e o
+        sistema deve receber impermeabilização e tratamento adequado
+        conforme o ambiente e o projeto.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="faq-item reveal">
+
+    <button class="faq-question">
+      Drywall é frágil?
+      <i data-lucide="chevron-down"></i>
+    </button>
+
+    <div class="faq-answer">
+      <p>
+        Não necessariamente. A resistência depende do sistema
+        completo, incluindo espessura e quantidade de placas,
+        perfis, espaçamento e reforços. Existem sistemas projetados
+        para diferentes níveis de resistência.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="faq-item reveal">
+
+    <button class="faq-question">
+      Drywall melhora o Wi-Fi?
+      <i data-lucide="chevron-down"></i>
+    </button>
+
+    <div class="faq-answer">
+      <p>
+        O drywall não aumenta a velocidade do Wi-Fi por si só.
+        Porém, paredes leves podem apresentar comportamento diferente
+        de paredes muito densas na propagação de sinais de rádio.
+        Além disso, sua cavidade facilita a passagem e manutenção de
+        cabos de rede, elétrica e outros sistemas.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="faq-item reveal">
+
+    <button class="faq-question">
+      Qual é a durabilidade do drywall?
+      <i data-lucide="chevron-down"></i>
+    </button>
+
+    <div class="faq-answer">
+      <p>
+        Quando corretamente especificado, instalado e mantido,
+        o sistema pode apresentar longa vida útil. A durabilidade
+        depende principalmente das condições ambientais, qualidade
+        da instalação e utilização correta dos materiais.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+  </div></section><section class="final-cta" id="fontes">  <div class="container"><div class="cta-box reveal">
+
+  <h2>
+    Construção inteligente começa com informação.
+  </h2>
+
+  <p>
+    Os números são importantes, mas entender como o sistema
+    funciona é o que permite fazer comparações realmente justas.
+  </p>
+
+  <a href="#dados" class="btn btn-primary">
+    Revisar os dados
+    <i data-lucide="arrow-up"></i>
+  </a>
+
+</div>
+
+  </div></section></main><footer>  <div class="container"><div class="footer-grid">
+
+  <div>
 
     <a href="#" class="logo">
       <span class="logo-icon">
         <i data-lucide="layers"></i>
       </span>
 
-      Drywall<span style="color:#2563eb">.</span>
+      InovaDry<span style="color:#2563eb">.</span>
     </a>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#dados">Dados</a>
-      <a href="#vantagens">Vantagens</a>
-      <a href="#galeria">Aplicações</a>
-      <a href="#faq">FAQ</a>
-      <a href="#fontes" class="nav-cta">Fontes</a>
-    </nav>
-
-    <button class="menu-button" id="menuButton" aria-label="Abrir menu">
-      <i data-lucide="menu"></i>
-    </button>
-
-  </div>
-</header>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<main>
-
-<section class="hero">
-
-  <div class="container hero-grid">
-
-    <div class="reveal">
-
-      <div class="eyebrow">
-        <span></span>
-        Construção + Tecnologia
-      </div>
-
-      <h1>
-        Construção inteligente começa com
-        <span>boas escolhas.</span>
-      </h1>
-
-      <p class="hero-text">
-        Descubra a ciência por trás do drywall e entenda como
-        esse sistema construtivo pode transformar velocidade,
-        conforto, sustentabilidade e eficiência nas obras.
-      </p>
-
-      <div class="hero-buttons">
-
-        <a href="#dados" class="btn btn-primary">
-          Explorar os fatos
-          <i data-lucide="arrow-down"></i>
-        </a>
-
-        <a href="#vantagens" class="btn btn-secondary">
-          Ver vantagens
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="hero-card reveal">
-
-      <div class="floating-data data-one">
-        Menos peso estrutural
-      </div>
-
-      <div class="floating-data data-two">
-        Instalação mais rápida
-      </div>
-
-      <div class="wall">
-        <div class="wall-line"></div>
-      </div>
-
-    </div>
+    <p class="footer-description">
+      Uma apresentação visual sobre ciência, inovação,
+      desempenho e possibilidades da construção a seco.
+    </p>
 
   </div>
 
-</section>
 
+  <div class="footer-column">
 
-<!-- =========================
-     ESTATÍSTICAS
-========================= -->
+    <h4>Navegação</h4>
 
-<section class="stats-section" id="dados">
-
-  <div class="container">
-
-    <div class="section-heading reveal">
-
-      <div class="section-label">
-        Dados e evidências
-      </div>
-
-      <h2>
-        O que os números mostram?
-      </h2>
-
-      <p>
-        O desempenho do drywall pode ser analisado por diferentes
-        critérios: peso, acústica, resíduos, conforto e resistência.
-      </p>
-
-    </div>
-
-
-    <div class="stats-grid">
-
-      <article class="stat-card reveal">
-
-        <div class="stat-icon">
-          <i data-lucide="volume-2"></i>
-        </div>
-
-        <div class="stat-number">
-          50 dB+
-        </div>
-
-        <div class="stat-title">
-          Isolamento acústico
-        </div>
-
-        <p class="stat-description">
-          Sistemas com múltiplas placas e lã mineral podem alcançar
-          elevados níveis de isolamento acústico.
-        </p>
-
-        <span class="source">
-          Fonte: especificação depende do sistema
-        </span>
-
-      </article>
-
-
-      <article class="stat-card reveal">
-
-        <div class="stat-icon">
-          <i data-lucide="thermometer"></i>
-        </div>
-
-        <div class="stat-number">
-          Até 30%
-        </div>
-
-        <div class="stat-title">
-          Eficiência energética
-        </div>
-
-        <p class="stat-description">
-          O desempenho térmico melhora com sistemas compostos
-          por placas, cavidade e materiais isolantes.
-        </p>
-
-        <span class="source">
-          Fonte: depende do projeto
-        </span>
-
-      </article>
-
-
-      <article class="stat-card reveal">
-
-        <div class="stat-icon">
-          <i data-lucide="weight"></i>
-        </div>
-
-        <div class="stat-number">
-          Até 80%
-        </div>
-
-        <div class="stat-title">
-          Menor peso
-        </div>
-
-        <p class="stat-description">
-          Sistemas de paredes leves podem reduzir significativamente
-          a carga transmitida à estrutura.
-        </p>
-
-        <span class="source">
-          Fonte: estudos comparativos
-        </span>
-
-      </article>
-
-
-      <article class="stat-card reveal">
-
-        <div class="stat-icon">
-          <i data-lucide="recycle"></i>
-        </div>
-
-        <div class="stat-number">
-          -85%
-        </div>
-
-        <div class="stat-title">
-          Menos resíduos
-        </div>
-
-        <p class="stat-description">
-          A construção a seco pode reduzir desperdícios quando
-          comparada a determinados sistemas convencionais.
-        </p>
-
-        <span class="source">
-          Fonte: varia conforme a obra
-        </span>
-
-      </article>
-
-
-      <article class="stat-card reveal">
-
-        <div class="stat-icon">
-          <i data-lucide="flame"></i>
-        </div>
-
-        <div class="stat-number">
-          Até 120 min
-        </div>
-
-        <div class="stat-title">
-          Resistência ao fogo
-        </div>
-
-        <p class="stat-description">
-          Sistemas específicos com placas RF podem atingir elevados
-          tempos de resistência ao fogo.
-        </p>
-
-        <span class="source">
-          Fonte: sistema ensaiado
-        </span>
-
-      </article>
-
-    </div>
+    <a href="#dados">Dados científicos</a>
+    <a href="#vantagens">Vantagens</a>
+    <a href="#galeria">Aplicações</a>
+    <a href="#faq">Perguntas frequentes</a>
 
   </div>
 
-</section>
 
+  <div class="footer-column">
 
-<!-- =========================
-     VANTAGENS
-========================= -->
+    <h4>Sobre o projeto</h4>
 
-<section id="vantagens">
-
-  <div class="container">
-
-    <div class="section-heading reveal">
-
-      <div class="section-label">
-        Na prática
-      </div>
-
-      <h2>
-        Mais do que uma parede.
-      </h2>
-
-      <p>
-        O drywall também influencia a maneira como uma obra é
-        planejada, instalada, modificada e mantida.
-      </p>
-
-    </div>
-
-
-    <div class="benefits-grid">
-
-      <article class="benefit-card reveal">
-
-        <div class="benefit-icon">
-          <i data-lucide="timer"></i>
-        </div>
-
-        <h3>Rapidez</h3>
-
-        <p>
-          A construção a seco permite executar paredes e divisórias
-          com menos etapas e sem o tempo de secagem da alvenaria
-          tradicional.
-        </p>
-
-      </article>
-
-
-      <article class="benefit-card reveal">
-
-        <div class="benefit-icon">
-          <i data-lucide="lamp-ceiling"></i>
-        </div>
-
-        <h3>Liberdade de design</h3>
-
-        <p>
-          Curvas, nichos, sancas, iluminação embutida e diferentes
-          configurações podem ser incorporadas ao projeto.
-        </p>
-
-      </article>
-
-
-      <article class="benefit-card reveal">
-
-        <div class="benefit-icon">
-          <i data-lucide="wrench"></i>
-        </div>
-
-        <h3>Manutenção simples</h3>
-
-        <p>
-          Instalações elétricas, hidráulicas e de dados podem ser
-          organizadas dentro das paredes, facilitando intervenções.
-        </p>
-
-      </article>
-
-
-      <article class="benefit-card reveal">
-
-        <div class="benefit-icon">
-          <i data-lucide="maximize"></i>
-        </div>
-
-        <h3>Mais área útil</h3>
-
-        <p>
-          Dependendo do sistema utilizado, paredes mais finas podem
-          liberar alguns centímetros de área interna.
-        </p>
-
-      </article>
-
-    </div>
+    <a href="#fontes">Fontes</a>
+    <a href="#dados">Estatísticas</a>
+    <a href="#vantagens">Benefícios</a>
 
   </div>
 
-</section>
+</div>
 
 
-<!-- =========================
-     CIÊNCIA
-========================= -->
+<div class="footer-bottom">
 
-<section class="science">
+  <span>
+    © 2026 — InovaDry
+  </span>
 
-  <div class="container science-grid">
+  <span>
+    Projeto educacional
+  </span>
 
-    <div class="reveal">
+</div>
 
-      <div class="section-label">
-        Ciência da construção
-      </div>
-
-      <h2>
-        O desempenho está dentro da parede.
-      </h2>
-
-      <p class="science-description">
-        Uma parede de drywall não é apenas uma placa de gesso.
-        O desempenho depende da combinação entre placas, perfis,
-        cavidade interna, lã mineral, fixações e demais componentes.
-      </p>
-
-      <div class="science-list">
-
-        <div class="science-item">
-
-          <div class="check">
-            <i data-lucide="check" size="15"></i>
-          </div>
-
-          <p>
-            A lã mineral contribui para o isolamento acústico
-            e térmico.
-          </p>
-
-        </div>
-
-
-        <div class="science-item">
-
-          <div class="check">
-            <i data-lucide="check" size="15"></i>
-          </div>
-
-          <p>
-            A cavidade interna permite acomodar instalações
-            elétricas, hidráulicas e de dados.
-          </p>
-
-        </div>
-
-
-        <div class="science-item">
-
-          <div class="check">
-            <i data-lucide="check" size="15"></i>
-          </div>
-
-          <p>
-            O baixo peso reduz a carga permanente sobre a estrutura,
-            dependendo da solução adotada.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="comparison reveal">
-
-      <div class="comparison-title">
-        Exemplo de comparação de peso
-      </div>
-
-      <div class="bar-row">
-
-        <div class="bar-label">
-          <span>Alvenaria</span>
-          <strong>100%</strong>
-        </div>
-
-        <div class="bar">
-          <div class="bar-fill masonry"></div>
-        </div>
-
-      </div>
-
-
-      <div class="bar-row">
-
-        <div class="bar-label">
-          <span>Drywall</span>
-          <strong>≈ 26%</strong>
-        </div>
-
-        <div class="bar">
-          <div class="bar-fill drywall"></div>
-        </div>
-
-      </div>
-
-      <p style="
-        color:#8994a1;
-        font-size:11px;
-        margin-top:25px;
-      ">
-        Representação visual de um cenário comparativo.
-        Os valores reais variam conforme os sistemas utilizados.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     GALERIA
-========================= -->
-
-<section id="galeria">
-
-  <div class="container">
-
-    <div class="section-heading reveal">
-
-      <div class="section-label">
-        Aplicações
-      </div>
-
-      <h2>
-        Onde o drywall aparece?
-      </h2>
-
-      <p>
-        De residências a escritórios, o sistema pode assumir
-        diferentes funções arquitetônicas.
-      </p>
-
-    </div>
-
-
-    <div class="gallery-grid">
-
-      <div class="gallery-item reveal">
-
-        <img
-          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
-          alt="Sala moderna">
-
-        <div class="gallery-overlay">
-          <h3>Ambientes residenciais</h3>
-        </div>
-
-      </div>
-
-
-      <div class="gallery-item reveal">
-
-        <img
-          src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
-          alt="Escritório moderno">
-
-        <div class="gallery-overlay">
-          <h3>Escritórios</h3>
-        </div>
-
-      </div>
-
-
-      <div class="gallery-item reveal">
-
-        <img
-          src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80"
-          alt="Interior moderno">
-
-        <div class="gallery-overlay">
-          <h3>Design de interiores</h3>
-        </div>
-
-      </div>
-
-
-      <div class="gallery-item reveal">
-
-        <img
-          src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80"
-          alt="Quarto moderno">
-
-        <div class="gallery-overlay">
-          <h3>Conforto acústico</h3>
-        </div>
-
-      </div>
-
-
-      <div class="gallery-item reveal">
-
-        <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
-          alt="Casa moderna">
-
-        <div class="gallery-overlay">
-          <h3>Construção contemporânea</h3>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FAQ
-========================= -->
-
-<section id="faq">
-
-  <div class="container">
-
-    <div class="section-heading reveal">
-
-      <div class="section-label">
-        Perguntas frequentes
-      </div>
-
-      <h2>
-        Ainda ficou alguma dúvida?
-      </h2>
-
-      <p>
-        Algumas das principais dúvidas sobre o sistema respondidas
-        de maneira simples.
-      </p>
-
-    </div>
-
-
-    <div class="faq-container">
-
-      <div class="faq-item reveal">
-
-        <button class="faq-question">
-          Drywall aguenta televisão e armários?
-
-          <i data-lucide="chevron-down"></i>
-        </button>
-
-        <div class="faq-answer">
-          <p>
-            Sim. O sistema pode receber TVs, armários e outros objetos,
-            desde que sejam utilizados pontos de fixação adequados,
-            considerando o peso e a posição dos perfis ou reforços
-            internos.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="faq-item reveal">
-
-        <button class="faq-question">
-          Pode usar drywall em banheiro?
-
-          <i data-lucide="chevron-down"></i>
-        </button>
-
-        <div class="faq-answer">
-          <p>
-            Sim, mas não deve ser utilizada uma placa comum em qualquer
-            situação. Existem placas específicas para áreas úmidas e o
-            sistema deve receber impermeabilização e tratamento adequado
-            conforme o ambiente e o projeto.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="faq-item reveal">
-
-        <button class="faq-question">
-          Drywall é frágil?
-
-          <i data-lucide="chevron-down"></i>
-        </button>
-
-        <div class="faq-answer">
-          <p>
-            Não necessariamente. A resistência depende do sistema
-            completo, incluindo espessura e quantidade de placas,
-            perfis, espaçamento e reforços. Existem sistemas projetados
-            para diferentes níveis de resistência.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="faq-item reveal">
-
-        <button class="faq-question">
-          Drywall melhora o Wi-Fi?
-
-          <i data-lucide="chevron-down"></i>
-        </button>
-
-        <div class="faq-answer">
-          <p>
-            O drywall não aumenta a velocidade do Wi-Fi por si só.
-            Porém, paredes leves podem apresentar comportamento diferente
-            de paredes muito densas na propagação de sinais de rádio.
-            Além disso, sua cavidade facilita a passagem e manutenção de
-            cabos de rede, elétrica e outros sistemas.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="faq-item reveal">
-
-        <button class="faq-question">
-          Qual é a durabilidade do drywall?
-
-          <i data-lucide="chevron-down"></i>
-        </button>
-
-        <div class="faq-answer">
-          <p>
-            Quando corretamente especificado, instalado e mantido,
-            o sistema pode apresentar longa vida útil. A durabilidade
-            depende principalmente das condições ambientais, qualidade
-            da instalação e utilização correta dos materiais.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CTA
-========================= -->
-
-<section class="final-cta" id="fontes">
-
-  <div class="container">
-
-    <div class="cta-box reveal">
-
-      <h2>
-        Construção inteligente começa com informação.
-      </h2>
-
-      <p>
-        Os números são importantes, mas entender como o sistema
-        funciona é o que permite fazer comparações realmente justas.
-      </p>
-
-      <a href="#dados" class="btn btn-primary">
-        Revisar os dados
-        <i data-lucide="arrow-up"></i>
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-</main>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div>
-
-        <a href="#" class="logo">
-          <span class="logo-icon">
-            <i data-lucide="layers"></i>
-          </span>
-
-          Drywall<span style="color:#2563eb">.</span>
-        </a>
-
-        <p class="footer-description">
-          Uma apresentação visual sobre ciência, desempenho e
-          possibilidades da construção a seco.
-        </p>
-
-      </div>
-
-
-      <div class="footer-column">
-
-        <h4>Navegação</h4>
-
-        <a href="#dados">Dados científicos</a>
-        <a href="#vantagens">Vantagens</a>
-        <a href="#galeria">Aplicações</a>
-        <a href="#faq">Perguntas frequentes</a>
-
-      </div>
-
-
-      <div class="footer-column">
-
-        <h4>Sobre o projeto</h4>
-
-        <a href="#fontes">Fontes</a>
-        <a href="#dados">Estatísticas</a>
-        <a href="#vantagens">Benefícios</a>
-
-      </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-      <span>
-        © 2026 — Ciência por trás do Drywall
-      </span>
-
-      <span>
-        Projeto educacional
-      </span>
-
-    </div>
-
-  </div>
-
-</footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
+  </div></footer><script>
 
   /* =========================
      ÍCONES
@@ -1878,8 +1860,6 @@
 
   });
 
-
-  /* Fecha o menu depois de clicar */
 
   document.querySelectorAll(".nav-links a").forEach(link => {
 
@@ -2014,7 +1994,5 @@
     numberObserver.observe(number);
   });
 
-</script>
-
-</body>
+</script></body>
 </html>
